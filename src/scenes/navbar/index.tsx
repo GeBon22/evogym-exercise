@@ -25,7 +25,12 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
-            <img alt="logo" src={Logo} />
+            <div
+              onClick={() => window.scrollTo(0,0)}
+              style={{ scrollBehavior: "smooth", cursor: "pointer" }}
+            >
+              <img alt="logo" src={Logo} />
+            </div>
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
                 <div className={`${flexBetween} gap-8 text-sm`}>
@@ -81,26 +86,34 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
           {/* MENU ITEMS */}
           <div className={"ml-[33%] flex flex-col gap-10 text-2xl"}>
-            <Link
-              page="Home"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Benefits"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Our Classes"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Contact Us"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
+            <div onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <Link
+                page="Home"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+            </div>
+            <div onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <Link
+                page="Benefits"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+            </div>
+            <div onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <Link
+                page="Our Classes"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+            </div>
+            <div onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <Link
+                page="Contact Us"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+            </div>
           </div>
         </div>
       )}
