@@ -67,7 +67,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
             care into each and every member. Trust us - even though you don't know us. 
           </p>
         </motion.div>
-
+<p> Hello Text   </p>
         {/* BENEFITS */}
         <motion.div
           className="mt-5 items-center justify-between gap-8 md:flex"
